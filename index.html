@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Братик — личные автоматизации почты, календаря и задач в n8n для одного владельца.">
+  <title>Братик — личные автоматизации</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23174270'/%3E%3Ctext x='16' y='23' font-family='Arial,sans-serif' font-size='23' font-weight='700' text-anchor='middle' fill='white'%3EB%3C/text%3E%3C/svg%3E">
+  <style>
+    :root{color-scheme:light;--ink:#172b40;--muted:#526579;--accent:#174270;--line:#d8e2eb;--paper:#fff;--wash:#f2f6fa}*{box-sizing:border-box}body{margin:0;background:var(--wash);color:var(--ink);font:1rem/1.7 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--accent);text-underline-offset:.2em}a:hover{text-decoration-thickness:2px}a:focus-visible{outline:3px solid #cf781c;outline-offset:5px}.wrap{max-width:860px;margin:0 auto;padding:0 24px}header{background:var(--paper);border-bottom:1px solid var(--line)}nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:84px;flex-wrap:wrap;padding-top:16px;padding-bottom:16px}.brand{font-size:1.25rem;font-weight:750;letter-spacing:.01em;text-decoration:none}.navlink{font-size:.9375rem}main{padding-top:58px;padding-bottom:64px}.eyebrow{margin:0 0 12px;color:var(--accent);font-size:.875rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase}h1{max-width:700px;margin:0 0 20px;font-size:clamp(2rem,5vw,3rem);line-height:1.17;letter-spacing:-.035em}h2{font-size:1.25rem;line-height:1.35;margin:0 0 12px}p{margin:0 0 18px}.lead{font-size:1.125rem;max-width:700px;color:#374f66}.panel{margin-top:32px;padding:28px 30px;background:var(--paper);border:1px solid var(--line);border-radius:12px}.features{margin:0;padding-left:1.25rem}.features li+li{margin-top:12px}.service{font-weight:700}.small{font-size:.9375rem;color:var(--muted)}.action{display:inline-block;margin-top:6px;border-radius:7px;padding:11px 18px;background:var(--accent);color:white;font-weight:650;text-decoration:none}footer{border-top:1px solid var(--line);padding:24px 0 34px;color:var(--muted);font-size:.875rem}footer p{margin:0}@media(max-width:540px){.wrap{padding-left:20px;padding-right:20px}main{padding-top:36px;padding-bottom:44px}.panel{padding:23px 20px}.navlink{max-width:220px}.lead{font-size:1.0625rem}}
+  </style>
+</head>
+<body>
+  <header><nav class="wrap" aria-label="Главная навигация"><a class="brand" href="index.html" aria-current="page">Братик</a><a class="navlink" href="privacy.html">Конфиденциальность</a></nav></header>
+  <main class="wrap">
+    <p class="eyebrow">Личное приложение · n8n</p>
+    <h1>Почта, встречи и задачи в одном личном помощнике</h1>
+    <p class="lead">Братик — набор автоматизаций для одного владельца. Он работает в локальном n8n на компьютере владельца и соединяет его Gmail, Google Календарь, Google Tasks и личный чат с ботом в Telegram.</p>
+    <section class="panel" aria-labelledby="features">
+      <h2 id="features">Для чего он нужен</h2>
+      <ul class="features">
+        <li>Собрать утренний список непрочитанных писем и событий на сегодня.</li>
+        <li>Сообщить о новых письмах и напомнить о ближайших встречах.</li>
+        <li>Создать задачу в Google Tasks из письма, которое владелец сам отметил меткой <strong>BRATIK-TASK</strong>.</li>
+        <li>Сообщить владельцу об ошибке автоматизации.</li>
+      </ul>
+      <p class="small" style="margin-top:20px;margin-bottom:0">Эти функции работают после подключения нужных аккаунтов и включения соответствующих сценариев. Для выполнения на компьютере должны работать n8n и интернет.</p>
+    </section>
+    <section class="panel" aria-labelledby="access">
+      <h2 id="access">Как используются подключённые сервисы</h2>
+      <p><span class="service">Gmail и Google Календарь:</span> текущие сценарии читают данные. Они не отправляют письма, не меняют их статус прочтения и не редактируют события.</p>
+      <p><span class="service">Google Tasks:</span> сценарий читает существующие задачи для проверки повторов и создаёт задачи из отмеченных писем.</p>
+      <p><span class="service">Telegram:</span> бот отправляет выбранные сведения — темы и отправителей писем, ссылки на письма, названия и время встреч, при наличии место встречи, а также названия созданных задач — в личный чат владельца.</p>
+      <p class="small" style="margin-bottom:0">Сводки формируются по заданным правилам. В текущих сценариях нет передачи данных сторонним AI-сервисам. Полный текст писем не включается в Telegram-сводки и заметки создаваемых задач.</p>
+    </section>
+    <section class="panel" aria-labelledby="control">
+      <h2 id="control">Управление остаётся у владельца</h2>
+      <p>Приложение предназначено для личного использования одним владельцем. Открытая регистрация и подключение чужих аккаунтов не предусмотрены. Сценарии и подключения управляются через локальный n8n.</p>
+      <p>Рабочие данные, журналы ошибок и резервные копии могут храниться на компьютере. Отправленные сообщения остаются в Telegram, а созданные задачи — в Google Tasks, пока владелец не удалит их в соответствующем сервисе.</p>
+      <a class="action" href="privacy.html">Как обрабатываются данные</a>
+    </section>
+  </main>
+  <footer><div class="wrap"><p>Братик · Информация о личной версии приложения</p><p><a href="privacy.html">Политика конфиденциальности</a></p></div></footer>
+</body>
+</html>
